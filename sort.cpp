@@ -98,7 +98,7 @@ void QuickSort(vector<int>& input, int low, int high)//快速排序
 {
     if (low < high)
     {
-        int privotIndex = low + (high - low) / 2;//设定基准值，取数组中间位置
+        int privotIndex = low;//设定基准值
         int storageIndex = low;//默认从数组左前方开始比较
 
         swap(input[privotIndex], input[high]);//将基准值移动到数组最后
@@ -415,7 +415,7 @@ int main()
     //InsertionSort(array);
 
     //快速排序
-    //QuickSortStart(array);
+    QuickSortStart(array);
 
     //计数排序
     //CountingSort(array);
