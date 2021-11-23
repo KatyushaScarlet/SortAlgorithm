@@ -98,7 +98,8 @@ void QuickSort(vector<int>& input, int low, int high)//快速排序
 {
     if (low < high)
     {
-        int privotIndex = low;//设定基准值
+        int privotIndex = rand() % (high - low + 1) + low
+            ;//设定基准值（重要）
         int storageIndex = low;//默认从数组左前方开始比较
 
         swap(input[privotIndex], input[high]);//将基准值移动到数组最后
@@ -111,9 +112,9 @@ void QuickSort(vector<int>& input, int low, int high)//快速排序
                 storageIndex++;//存储位置向右移动
             }
         }
-        swap(input[high], input[storageIndex]);//将基准值移动回来
-        QuickSort(input, low, privotIndex - 1);//继续排序前半部分数组
-        QuickSort(input, privotIndex + 1, high);//继续排序后半部分数组
+        swap(input[high], input[storageIndex]);//将基准值移动回来（重要）
+        QuickSort(input, low, storageIndex - 1);//继续排序前半部分数组
+        QuickSort(input, storageIndex + 1, high);//继续排序后半部分数组
     }
 }
 
